@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: LinkFresh API
+
+  openapi: 3.0.3
+info:
+  title: LinkFresh API
+  version: 1.0.0
+paths:
+  /api/scan:
+    post:
+      summary: Scan a website for broken links
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  example: "https://example.com"
+      responses:
+        '200':
+          description: Scan results
+components:
+  schemas:
+    BrokenLink:
+      type: object
+      properties:
+        href:
+          type: string
+        status:
+          type: integer
